@@ -33,10 +33,25 @@
 	
 	
 
+<div class="container"	>
 	
 	
 	
-<div class="box1" style="cursor: pointer;" onclick="location.href='https://sumena.ee';">	
+<div class="box1">
+  <button onClick="openPopup();">VAJUTA SIIA</button>
+
+	 <div id="test" class="popup" >
+      Tänane pakkumine 
+		 		 	 <div class="cancel" onclick="closePopup();">x</div>
+
+		 <img
+			  class="popupimg" onclick="location.href='http://www.sumena.ee'" type="button" style="cursor: pointer"
+			  src="1080x1080.jpg"
+			  alt""
+			  >
+
+  </div>
+
 	 
 	<img 
 
@@ -44,12 +59,12 @@
 		 src="icon-logo-big.svg"
 		 alt=""
 	>
-  <div class="number">1</div>
-
+  <span class="number">1</span>
 
 </div>
 
-<div class="box1" >
+
+ <div class="box1" >
 	 
 	<img
 		 class="box-logo"
@@ -61,7 +76,7 @@
 
 	</div>
 	
-<div class="box1">	
+ <div class="box1">	
 	 
 	<img
 		 class="box-logo"
@@ -73,7 +88,7 @@
 
 	</div>
 	
-<div class="box1">	
+ <div class="box1">	
 	<img
 		 class="box-logo"
 		 src="icon-logo-big.svg"
@@ -84,7 +99,7 @@
 
 	</div>
 	
-<div class="box1">	
+ <div class="box1">	
 
 	<img
 
@@ -97,210 +112,76 @@
 
 	</div>
 	
-<div class="box2">
+ <div class="box2">
 	<img
 		 class="box-logo"
 		 src="icon-logo-big.svg"
 		 alt=""
 	>
+		  <div class="number">6</div>
+
+ </div>
+
+ <div class="box2">
+	<img
+		 class="box-logo"
+		 src="icon-logo-big.svg"
+		 alt=""
+	>
+			  <div class="number">7</div>
+
+ </div>
+	
+ <div class="box2">
+	<img
+		 class="box-logo"
+		 src="icon-logo-big.svg"
+		 alt=""
+	>
+			  <div class="number">8</div>
+
+ </div>	
+
+	
+ <div class="box2">
+	<img
+		 class="box-logo"
+		 src="icon-logo-big.svg"
+		 alt=""
+	>
+	
+	 		  <div class="number">9</div>
+
+ </div>	
+	
+	
+ <div class="box2">
+	<img
+		 class="box-logo"
+		 src="icon-logo-big.svg"
+		 alt=""
+	>
+	
+	 		  <div class="number">10</div>
+
+ </div>
+	
 	
 </div>
+	
+	
+<script type="text/javascript" src="main.js"></script>
 
-<div class="box2">
-	<img
-		 class="box-logo"
-		 src="icon-logo-big.svg"
-		 alt=""
-	>
-	
-</div>
-<div class="box2">
-	<img
-		 class="box-logo"
-		 src="icon-logo-big.svg"
-		 alt=""
-	>
-	
-</div>	
-
-	
-<div class="box2">
-	<img
-		 class="box-logo"
-		 src="icon-logo-big.svg"
-		 alt=""
-	>
-	
-</div>	
-	
-	
-<div class="box2">
-	<img
-		 class="box-logo"
-		 src="icon-logo-big.svg"
-		 alt=""
-	>
-	
-</div>
-	
-	
-<style>
-  #snowflakeContainer {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    display: none;
-  }
-
-  .snowflake {
-    position: fixed;
-    background-color: white;
-    user-select: none;
-    z-index: 1000;
-    pointer-events: none;
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
-  }
-</style>
 
 <div id="snowflakeContainer">
   <span class="snowflake"></span>
 </div>
 
-<script>
-  var snowflakes = [];
 
-  var browserWidth;
-  var browserHeight;
-
-  var numberOfSnowflakes = 150;
-
-  var resetPosition = false;
-
-  var enableAnimations = false;
-  var reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
-
-  function setAccessibilityState() {
-    if (reduceMotionQuery.matches) {
-      enableAnimations = false;
-    } else { 
-      enableAnimations = true;
-    }
-  }
-  setAccessibilityState();
-
-  reduceMotionQuery.addListener(setAccessibilityState);
-
-  
-  function setup() {
-    if (enableAnimations) {
-      window.addEventListener("DOMContentLoaded", generateSnowflakes, false);
-      window.addEventListener("resize", setResetFlag, false);
-    }
-  }
-  setup();
+	
+	
 
 
-  function Snowflake(element, speed, xPos, yPos) {
-    this.element = element;
-    this.speed = speed;
-    this.xPos = xPos;
-    this.yPos = yPos;
-    this.scale = 1;
 
-    this.counter = 0;
-    this.sign = Math.random() < 0.5 ? 1 : -1;
-
-    this.element.style.opacity = (.5 + Math.random()) / 3;
-  }
-
-  
-  Snowflake.prototype.update = function () {
-    this.counter += this.speed / 5000;
-    this.xPos += this.sign * this.speed * Math.cos(this.counter) / 40;
-    this.yPos += Math.sin(this.counter) / 40 + this.speed / 30;
-    this.scale = .5 + Math.abs(10 * Math.cos(this.counter) / 20);
-
-    setTransform(Math.round(this.xPos), Math.round(this.yPos), this.scale, this.element);
-
-    if (this.yPos > browserHeight) {
-      this.yPos = -50;
-    }
-  }
-
-  
-  function setTransform(xPos, yPos, scale, el) {
-    el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) scale(${scale}, ${scale})`;
-  }
-
- 
-  function generateSnowflakes() {
-
-    var originalSnowflake = document.querySelector(".snowflake");
-
-    var snowflakeContainer = originalSnowflake.parentNode;
-    snowflakeContainer.style.display = "block";
-
-    browserWidth = document.documentElement.clientWidth;
-    browserHeight = document.documentElement.clientHeight;
-
-    for (var i = 0; i < numberOfSnowflakes; i++) {
-
-      var snowflakeClone = originalSnowflake.cloneNode(true);
-      snowflakeContainer.appendChild(snowflakeClone);
-
-      var initialXPos = getPosition(50, browserWidth);
-      var initialYPos = getPosition(50, browserHeight);
-      var speed = 5 + Math.random() * 40;
-
-      var snowflakeObject = new Snowflake(snowflakeClone,
-        speed,
-        initialXPos,
-        initialYPos);
-      snowflakes.push(snowflakeObject);
-    }
-
-    snowflakeContainer.removeChild(originalSnowflake);
-
-    moveSnowflakes();
-  }
-
-  
-  function moveSnowflakes() {
-
-    if (enableAnimations) {
-      for (var i = 0; i < snowflakes.length; i++) {
-        var snowflake = snowflakes[i];
-        snowflake.update();
-      }      
-    }
-
-    if (resetPosition) {
-      browserWidth = document.documentElement.clientWidth;
-      browserHeight = document.documentElement.clientHeight;
-
-      for (var i = 0; i < snowflakes.length; i++) {
-        var snowflake = snowflakes[i];
-
-        snowflake.xPos = getPosition(50, browserWidth);
-        snowflake.yPos = getPosition(50, browserHeight);
-      }
-
-      resetPosition = false;
-    }
-
-    requestAnimationFrame(moveSnowflakes);
-  }
-
-  function getPosition(offset, size) {
-    return Math.round(-1 * offset + Math.random() * (size + 2 * offset));
-  }
-
-  
-  function setResetFlag(e) {
-    resetPosition = true;
-  }
-</script>
-</body>
+ </body>
 </html>
