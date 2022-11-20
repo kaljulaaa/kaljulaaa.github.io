@@ -34,27 +34,27 @@ a:focus {
 .no-js .cube {
 	border: 3px solid #fff;
 	outline: 1px solid #fff;
-	background: #f0f0f0 url("../img/gift box.png")no-repeat center center;
+	background: #f0f0f0 url("gift box.png")no-repeat center center;
 }
 
 .cube:not(.cube--inactive):nth-child(2n) .cube__side,
 .no-js .cube:not(.cube--inactive):nth-child(2n) {
-	background-image: url("../img/gift box.png");
+	background-image: url("gift box.png");
 }
 
 .cube:not(.cube--inactive):nth-child(3n) .cube__side,
 .no-js .cube:not(.cube--inactive):nth-child(3n) {
-	background-image: url("../img/gift box.png");
+	background-image: url("gift box.png");
 }
 
 .cube:not(.cube--inactive):nth-child(4n) .cube__side,
 .no-js .cube:not(.cube--inactive):nth-child(4n) {
-	background-image: url("../img/gift box.png");
+	background-image: url("gift box.png");
 }
 
 .cube:not(.cube--inactive):nth-child(5n) .cube__side,
 .no-js .cube:not(.cube--inactive):nth-child(5n) {
-	background-image: url("../img/gift box.png");
+	background-image: url("gift box.png");
 }
 
 .cube--inactive .cube__side,
