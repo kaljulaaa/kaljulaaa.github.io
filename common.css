@@ -347,7 +347,7 @@ main {
 
 	perspective: 1000px;
 
-	padding: 0 calc((100vw - (7 * (7vw + 1vw)))/2) 5em;
+	padding: 10 calc((100vw - (7 * (7vw + 1vw)))/2) 5em;
 
 }
 
