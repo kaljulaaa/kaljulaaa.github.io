@@ -323,7 +323,7 @@ main {
 
 	position: relative;
 
-	width: 100%;
+	width: 80%;
 
 	height: 100%;
 
@@ -343,9 +343,9 @@ main {
 
 	position: absolute;
 
-	-webkit-perspective: 1000px;
+	-webkit-perspective: 800px;
 
-	perspective: 1000px;
+	perspective: 800px;
 
 	padding: 10 calc((100vw - (7 * (7vw + 1vw)))/2) 5em;
 
