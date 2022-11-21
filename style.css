@@ -68,7 +68,7 @@ a:focus {
 .cube__number,
 .no-js .cube::after {
 	font-weight: 900;
-	font-size: 1.5em;
+	font-size: 2vw;
 	color: #cc0019;
 	background: white;
 	background-size: contain;
